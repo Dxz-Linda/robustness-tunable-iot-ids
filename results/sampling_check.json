@@ -1,0 +1,203 @@
+{
+  "binary": {
+    "tag": "binary",
+    "method": "sklearn train_test_split, stratify on the label, shuffle enabled",
+    "seed": 42,
+    "n_full": 2219201,
+    "n_sample": 200000,
+    "max_abs_deviation_pp": 8.579799666841303e-05,
+    "max_deviation_class": "1",
+    "chi2": 7.435550975744114e-07,
+    "p_value": 0.9993119870934081,
+    "degrees_of_freedom": 1,
+    "rarest_classes": [
+      {
+        "class": "1",
+        "full_n": 603558,
+        "full_share_pct": 27.197085797996667,
+        "sample_n": 54394,
+        "sample_share_pct": 27.197,
+        "abs_dev_pp": 8.579799666841303e-05
+      },
+      {
+        "class": "0",
+        "full_n": 1615643,
+        "full_share_pct": 72.80291420200334,
+        "sample_n": 145606,
+        "sample_share_pct": 72.803,
+        "abs_dev_pp": 8.579799666286192e-05
+      }
+    ],
+    "per_class": [
+      {
+        "class": "0",
+        "full_n": 1615643,
+        "full_share_pct": 72.80291420200334,
+        "sample_n": 145606,
+        "sample_share_pct": 72.803,
+        "abs_dev_pp": 8.579799666286192e-05
+      },
+      {
+        "class": "1",
+        "full_n": 603558,
+        "full_share_pct": 27.197085797996667,
+        "sample_n": 54394,
+        "sample_share_pct": 27.197,
+        "abs_dev_pp": 8.579799666841303e-05
+      }
+    ]
+  },
+  "multiclass": {
+    "tag": "multiclass",
+    "method": "sklearn train_test_split, stratify on the label, shuffle enabled",
+    "seed": 42,
+    "n_full": 2219201,
+    "n_sample": 200000,
+    "max_abs_deviation_pp": 0.00026233923831140565,
+    "max_deviation_class": "Port_Scanning",
+    "chi2": 0.002584916222502537,
+    "p_value": 1.0,
+    "degrees_of_freedom": 14,
+    "rarest_classes": [
+      {
+        "class": "Fingerprinting",
+        "full_n": 1001,
+        "full_share_pct": 0.04510632430320642,
+        "sample_n": 90,
+        "sample_share_pct": 0.045,
+        "abs_dev_pp": 0.00010632430320642403
+      },
+      {
+        "class": "MITM",
+        "full_n": 1214,
+        "full_share_pct": 0.05470437333076184,
+        "sample_n": 109,
+        "sample_share_pct": 0.0545,
+        "abs_dev_pp": 0.00020437333076183707
+      }
+    ],
+    "per_class": [
+      {
+        "class": "Normal",
+        "full_n": 1615643,
+        "full_share_pct": 72.80291420200334,
+        "sample_n": 145606,
+        "sample_share_pct": 72.803,
+        "abs_dev_pp": 8.579799666286192e-05
+      },
+      {
+        "class": "DDoS_UDP",
+        "full_n": 121568,
+        "full_share_pct": 5.478007625266932,
+        "sample_n": 10956,
+        "sample_share_pct": 5.478000000000001,
+        "abs_dev_pp": 7.625266931765573e-06
+      },
+      {
+        "class": "DDoS_ICMP",
+        "full_n": 116436,
+        "full_share_pct": 5.246753223344799,
+        "sample_n": 10493,
+        "sample_share_pct": 5.2465,
+        "abs_dev_pp": 0.000253223344798964
+      },
+      {
+        "class": "SQL_injection",
+        "full_n": 51203,
+        "full_share_pct": 2.307271851445633,
+        "sample_n": 4615,
+        "sample_share_pct": 2.3074999999999997,
+        "abs_dev_pp": 0.0002281485543667583
+      },
+      {
+        "class": "Password",
+        "full_n": 50153,
+        "full_share_pct": 2.2599575252534585,
+        "sample_n": 4520,
+        "sample_share_pct": 2.26,
+        "abs_dev_pp": 4.247474654148209e-05
+      },
+      {
+        "class": "Vulnerability_scanner",
+        "full_n": 50110,
+        "full_share_pct": 2.258019890942731,
+        "sample_n": 4516,
+        "sample_share_pct": 2.258,
+        "abs_dev_pp": 1.989094273111003e-05
+      },
+      {
+        "class": "DDoS_TCP",
+        "full_n": 50062,
+        "full_share_pct": 2.255856950316803,
+        "sample_n": 4512,
+        "sample_share_pct": 2.2560000000000002,
+        "abs_dev_pp": 0.00014304968319681088
+      },
+      {
+        "class": "DDoS_HTTP",
+        "full_n": 49911,
+        "full_share_pct": 2.2490526995977382,
+        "sample_n": 4498,
+        "sample_share_pct": 2.249,
+        "abs_dev_pp": 5.269959773811228e-05
+      },
+      {
+        "class": "Uploading",
+        "full_n": 37634,
+        "full_share_pct": 1.6958355732536168,
+        "sample_n": 3392,
+        "sample_share_pct": 1.696,
+        "abs_dev_pp": 0.00016442674638308952
+      },
+      {
+        "class": "Backdoor",
+        "full_n": 24862,
+        "full_share_pct": 1.1203131217046134,
+        "sample_n": 2241,
+        "sample_share_pct": 1.1205,
+        "abs_dev_pp": 0.00018687829538652917
+      },
+      {
+        "class": "Port_Scanning",
+        "full_n": 22564,
+        "full_share_pct": 1.0167623392383114,
+        "sample_n": 2033,
+        "sample_share_pct": 1.0165,
+        "abs_dev_pp": 0.00026233923831140565
+      },
+      {
+        "class": "XSS",
+        "full_n": 15915,
+        "full_share_pct": 0.717150001284246,
+        "sample_n": 1434,
+        "sample_share_pct": 0.717,
+        "abs_dev_pp": 0.00015000128424595
+      },
+      {
+        "class": "Ransomware",
+        "full_n": 10925,
+        "full_share_pct": 0.49229429871381636,
+        "sample_n": 985,
+        "sample_share_pct": 0.4925,
+        "abs_dev_pp": 0.00020570128618363492
+      },
+      {
+        "class": "MITM",
+        "full_n": 1214,
+        "full_share_pct": 0.05470437333076184,
+        "sample_n": 109,
+        "sample_share_pct": 0.0545,
+        "abs_dev_pp": 0.00020437333076183707
+      },
+      {
+        "class": "Fingerprinting",
+        "full_n": 1001,
+        "full_share_pct": 0.04510632430320642,
+        "sample_n": 90,
+        "sample_share_pct": 0.045,
+        "abs_dev_pp": 0.00010632430320642403
+      }
+    ]
+  },
+  "cross_check_binary_strat_multiclass_dev_pp": 0.07585695031680321
+}

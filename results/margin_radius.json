@@ -1,0 +1,71 @@
+{
+  "n_eval": 5000,
+  "rows": [
+    {
+      "sigma": 0.0,
+      "clean_acc": 0.9244,
+      "median_margin": 3.853311061859131,
+      "median_grad_l1": 15085.71875,
+      "mean_grad_l1": 13936.86328125,
+      "median_predicted_radius": 0.0013701871503144503,
+      "q25_predicted_radius": 9.314142516814172e-05,
+      "q75_predicted_radius": 0.003314719069749117,
+      "measured_radius": 0.0027272727272667796
+    },
+    {
+      "sigma": 0.02,
+      "clean_acc": 0.9086,
+      "median_margin": 2.183873176574707,
+      "median_grad_l1": 25.72479820251465,
+      "mean_grad_l1": 58.07161331176758,
+      "median_predicted_radius": 0.08140701800584793,
+      "q25_predicted_radius": 0.07415423542261124,
+      "q75_predicted_radius": 0.242371067404747,
+      "measured_radius": 0.03008542445270889
+    },
+    {
+      "sigma": 0.05,
+      "clean_acc": 0.8774,
+      "median_margin": 1.9163213968276978,
+      "median_grad_l1": 4.065657138824463,
+      "mean_grad_l1": 20.988859176635742,
+      "median_predicted_radius": 0.4892811179161072,
+      "q25_predicted_radius": 0.3149350881576538,
+      "q75_predicted_radius": 0.5907256007194519,
+      "measured_radius": 0.12131578947312324
+    },
+    {
+      "sigma": 0.1,
+      "clean_acc": 0.8752,
+      "median_margin": 1.9563543796539307,
+      "median_grad_l1": 1.1300544738769531,
+      "mean_grad_l1": 8.049225807189941,
+      "median_predicted_radius": 2.195035219192505,
+      "q25_predicted_radius": 0.8003951907157898,
+      "q75_predicted_radius": 2.222977638244629,
+      "measured_radius": 0.21078199052094387
+    },
+    {
+      "sigma": 0.15,
+      "clean_acc": 0.874,
+      "median_margin": 1.945350170135498,
+      "median_grad_l1": 1.0859613418579102,
+      "mean_grad_l1": 8.346092224121094,
+      "median_predicted_radius": 1.7913620471954346,
+      "q25_predicted_radius": 0.621296763420105,
+      "q75_predicted_radius": 1.8261616230010986,
+      "measured_radius": 0.26056231002991365
+    },
+    {
+      "sigma": 0.2,
+      "clean_acc": 0.8722,
+      "median_margin": 1.8852952718734741,
+      "median_grad_l1": 0.8610086441040039,
+      "mean_grad_l1": 6.08329439163208,
+      "median_predicted_radius": 2.1962790489196777,
+      "q25_predicted_radius": 0.5737167596817017,
+      "q75_predicted_radius": 2.209210157394409,
+      "measured_radius": 0.3
+    }
+  ]
+}

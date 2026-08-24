@@ -1,0 +1,33 @@
+配对统计检验（同一批训练种子上的配对比较）
+
+数据来源 A : multiseed_baselines.json，种子 [42, 7, 123, 2024, 999]
+
+A. 注意力效应，指标 accuracy：Ours - CNN+BiLSTM(NoAttn)
+    配对差均值 = +0.1190 accuracy points，配对标准差 = 0.2666
+    t(4) = 0.998,  p = 0.3747
+    95% 置信区间 = [-0.2120, +0.4500] accuracy points  （含 0，差异不可靠）
+    Cohen dz = +0.446,  Wilcoxon p = 0.5000
+
+A. 注意力效应，指标 mcc：Ours - CNN+BiLSTM(NoAttn)
+    配对差均值 = +0.3037 MCC points，配对标准差 = 0.6768
+    t(4) = 1.003,  p = 0.3724
+    95% 置信区间 = [-0.5366, +1.1440] MCC points  （含 0，差异不可靠）
+    Cohen dz = +0.449,  Wilcoxon p = 0.4375
+
+A. 注意力效应，指标 macro_f1：Ours - CNN+BiLSTM(NoAttn)
+    配对差均值 = +0.1879 macro-F1 points，配对标准差 = 0.4231
+    t(4) = 0.993,  p = 0.3769
+    95% 置信区间 = [-0.3374, +0.7132] macro-F1 points  （含 0，差异不可靠）
+    Cohen dz = +0.444,  Wilcoxon p = 0.6250
+
+C. 随机森林对照，指标 accuracy：RandomForest - Ours
+    配对差均值 = +0.5115 accuracy points，配对标准差 = 0.1122
+    t(4) = 10.194,  p = 0.0005
+    95% 置信区间 = [+0.3722, +0.6508] accuracy points  （不含 0，差异可靠）
+    Cohen dz = +4.559,  Wilcoxon p = 0.0625
+
+[跳过 B] 找不到 multiseed_robustness.json，请先跑 multiseed_robustness.py
+
+注意：五个种子下 Wilcoxon 符号秩检验能取到的最小 p 值是 0.0625，
+所以在正文里应以配对 t 检验为主，Wilcoxon 只作方向一致性的佐证，
+并说明五种子检验的统计功效有限，结论是差异小于本实验的分辨率，而非差异恰为零。

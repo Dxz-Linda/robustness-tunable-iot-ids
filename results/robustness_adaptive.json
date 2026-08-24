@@ -1,0 +1,79 @@
+{
+  "models": {
+    "standard": {
+      "clean": 0.9244,
+      "per_eps": {
+        "0.02": {
+          "pgd_weak": 0.0732,
+          "pgd_strong": 0.0282,
+          "transfer": 0.4612,
+          "spsa": 0.063,
+          "square": 0.046,
+          "worst_case": 0.0282
+        },
+        "0.05": {
+          "pgd_weak": 0.0942,
+          "pgd_strong": 0.025,
+          "transfer": 0.3156,
+          "spsa": 0.057,
+          "square": 0.04,
+          "worst_case": 0.025
+        }
+      },
+      "sanity": {
+        "eps": 0.3,
+        "pgd_strong": 0.0,
+        "square": 0.0
+      }
+    },
+    "noise-aware": {
+      "clean": 0.8754,
+      "per_eps": {
+        "0.02": {
+          "pgd_weak": 0.8752,
+          "pgd_strong": 0.8752,
+          "transfer": 0.8752,
+          "spsa": 0.874,
+          "square": 0.874,
+          "worst_case": 0.874
+        },
+        "0.05": {
+          "pgd_weak": 0.8736,
+          "pgd_strong": 0.8736,
+          "transfer": 0.8752,
+          "spsa": 0.873,
+          "square": 0.873,
+          "worst_case": 0.873
+        }
+      },
+      "sanity": {
+        "eps": 0.3,
+        "pgd_strong": 0.1404,
+        "square": 0.116
+      }
+    }
+  },
+  "config": {
+    "rep_eps": 0.02,
+    "eps_list": [
+      0.02,
+      0.05
+    ],
+    "sanity_eps": 0.3,
+    "strong_pgd": [
+      50,
+      10
+    ],
+    "spsa": [
+      40,
+      8,
+      0.01
+    ],
+    "square": [
+      300,
+      2
+    ],
+    "n_whitebox": 5000,
+    "n_blackbox": 1000
+  }
+}

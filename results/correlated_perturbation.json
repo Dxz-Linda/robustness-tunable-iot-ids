@@ -1,0 +1,34 @@
+{
+  "correlation_stats": {
+    "mean_abs_corr": 0.03624099208389332,
+    "frac_abs_corr_above_0.5": 0.02040816326530612,
+    "frac_abs_corr_above_0.7": 0.015306122448979591,
+    "n_continuous": 49,
+    "n_groups": 36,
+    "n_multi_feature_groups": 9,
+    "pca_dim": 9,
+    "pca_variance_kept": 0.95
+  },
+  "eps_list": [
+    0.02
+  ],
+  "n_eval": 5000,
+  "models": {
+    "Standard": {
+      "clean": 0.9244,
+      "0.02": {
+        "independent": 0.0732,
+        "subspace": 0.6466,
+        "grouped": 0.118
+      }
+    },
+    "Noise-aware (sigma=0.1)": {
+      "clean": 0.8754,
+      "0.02": {
+        "independent": 0.8752,
+        "subspace": 0.8754,
+        "grouped": 0.8752
+      }
+    }
+  }
+}

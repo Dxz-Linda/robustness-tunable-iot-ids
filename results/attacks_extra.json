@@ -1,0 +1,264 @@
+{
+  "config": {
+    "eps": 0.02,
+    "pgd_steps": 7,
+    "n_eot": 20,
+    "train_sigma": 0.1,
+    "flip_k": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "n_eot_eval": 2000,
+    "n_flip_eval": 5000,
+    "attack_class_index": 1,
+    "zero_frac_sparse": 0.7,
+    "n_sparse": 45,
+    "order_indicator_top10": [
+      3,
+      25,
+      2,
+      7,
+      18,
+      13,
+      27,
+      0,
+      1,
+      28
+    ],
+    "order_saliency_top10": [
+      45,
+      43,
+      41,
+      39,
+      37,
+      13,
+      35,
+      17,
+      33,
+      31
+    ],
+    "indicator_scores_top10": [
+      0.20846259910375733,
+      0.20223818034554036,
+      0.1905664713317247,
+      0.07238883143743537,
+      0.06940886619476327,
+      0.05299896587383661,
+      0.018493421166167,
+      0.002965663413908744,
+      0.002965663413908744,
+      0.00020108008732620935
+    ],
+    "flip_values_top10": [
+      0.49622235450341134,
+      0.45210539951379225,
+      0.5056233786052189,
+      0.18907849829351536,
+      1.0,
+      1.0,
+      0.41534776385762334,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "feature_names": [
+      "arp.opcode",
+      "arp.hw.size",
+      "icmp.checksum",
+      "icmp.seq_le",
+      "icmp.transmit_timestamp",
+      "icmp.unused",
+      "http.file_data",
+      "http.content_length",
+      "http.request.uri.query",
+      "http.request.method",
+      "http.referer",
+      "http.request.full_uri",
+      "http.request.version",
+      "http.response",
+      "http.tls_port",
+      "tcp.ack",
+      "tcp.connection.fin",
+      "tcp.connection.rst",
+      "tcp.connection.syn",
+      "tcp.connection.synack",
+      "tcp.flags",
+      "tcp.flags.ack",
+      "tcp.len",
+      "tcp.seq",
+      "udp.port",
+      "udp.stream",
+      "udp.time_delta",
+      "dns.qry.name",
+      "dns.qry.name.len",
+      "dns.qry.qu",
+      "dns.qry.type",
+      "dns.retransmission",
+      "dns.retransmit_request",
+      "dns.retransmit_request_in",
+      "mqtt.conack.flags",
+      "mqtt.conflag.cleansess",
+      "mqtt.conflags",
+      "mqtt.hdrflags",
+      "mqtt.len",
+      "mqtt.msg_decoded_as",
+      "mqtt.msgtype",
+      "mqtt.proto_len",
+      "mqtt.protoname",
+      "mqtt.topic",
+      "mqtt.topic_len",
+      "mqtt.ver",
+      "mbtcp.len",
+      "mbtcp.trans_id",
+      "mbtcp.unit_id"
+    ],
+    "order_indicator_names_top10": [
+      "icmp.seq_le",
+      "udp.stream",
+      "icmp.checksum",
+      "http.content_length",
+      "tcp.connection.syn",
+      "http.response",
+      "dns.qry.name",
+      "arp.opcode",
+      "arp.hw.size",
+      "dns.qry.name.len"
+    ],
+    "order_saliency_names_top10": [
+      "mqtt.ver",
+      "mqtt.topic",
+      "mqtt.proto_len",
+      "mqtt.msg_decoded_as",
+      "mqtt.hdrflags",
+      "http.response",
+      "mqtt.conflag.cleansess",
+      "tcp.connection.rst",
+      "dns.retransmit_request_in",
+      "dns.retransmission"
+    ]
+  },
+  "models": {
+    "Standard": {
+      "clean_on_flip_subset": 0.9244,
+      "clean_on_eot_subset": 0.9255,
+      "pgd_7step": 0.088,
+      "eot_pgd": 0.216,
+      "flip": {
+        "indicator": {
+          "overall_up": {
+            "1": 0.4694,
+            "3": 0.4392,
+            "5": 0.3544,
+            "10": 0.3904
+          },
+          "on_normal_up": {
+            "1": 0.2727521929824561,
+            "3": 0.23848684210526316,
+            "5": 0.11513157894736842,
+            "10": 0.16447368421052633
+          },
+          "overall_down": {
+            "1": 0.9242,
+            "3": 0.8276,
+            "5": 0.8276,
+            "10": 0.8234
+          },
+          "on_attack_down": {
+            "1": 0.7226331360946746,
+            "3": 0.36538461538461536,
+            "5": 0.36538461538461536,
+            "10": 0.34911242603550297
+          }
+        },
+        "saliency": {
+          "overall_up": {
+            "1": 0.8158,
+            "3": 0.8112,
+            "5": 0.797,
+            "10": 0.777
+          },
+          "on_normal_up": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "overall_down": {
+            "1": 0.9244,
+            "3": 0.9244,
+            "5": 0.9244,
+            "10": 0.9244
+          },
+          "on_attack_down": {
+            "1": 0.7233727810650887,
+            "3": 0.7233727810650887,
+            "5": 0.7233727810650887,
+            "10": 0.7233727810650887
+          }
+        }
+      }
+    },
+    "Noise-aware (sigma=0.1)": {
+      "clean_on_flip_subset": 0.8754,
+      "clean_on_eot_subset": 0.8865,
+      "pgd_7step": 0.8855,
+      "eot_pgd": 0.8855,
+      "flip": {
+        "indicator": {
+          "overall_up": {
+            "1": 0.8766,
+            "3": 0.7986,
+            "5": 0.7284,
+            "10": 0.393
+          },
+          "on_normal_up": {
+            "1": 0.9454495614035088,
+            "3": 0.8818530701754386,
+            "5": 0.8884320175438597,
+            "10": 0.16858552631578946
+          },
+          "overall_down": {
+            "1": 0.8754,
+            "3": 0.8754,
+            "5": 0.8516,
+            "10": 0.8376
+          },
+          "on_attack_down": {
+            "1": 0.5539940828402367,
+            "3": 0.5539940828402367,
+            "5": 0.6131656804733728,
+            "10": 0.5650887573964497
+          }
+        },
+        "saliency": {
+          "overall_up": {
+            "1": 0.7834,
+            "3": 0.7532,
+            "5": 0.8274,
+            "10": 0.7296
+          },
+          "on_normal_up": {
+            "1": 0.8832236842105263,
+            "3": 0.8818530701754386,
+            "5": 0.9931469298245614,
+            "10": 1.0
+          },
+          "overall_down": {
+            "1": 0.8754,
+            "3": 0.8754,
+            "5": 0.8754,
+            "10": 0.7644
+          },
+          "on_attack_down": {
+            "1": 0.5539940828402367,
+            "3": 0.5539940828402367,
+            "5": 0.5539940828402367,
+            "10": 0.4437869822485207
+          }
+        }
+      }
+    }
+  }
+}

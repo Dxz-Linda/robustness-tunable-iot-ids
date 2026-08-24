@@ -1,0 +1,81 @@
+{
+  "hardware": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel | GPUs visible: 0 | TF 2.21.0 | Windows",
+  "records": [
+    {
+      "name": "Proposed MI-CNN-BiLSTM-Attention, all features",
+      "n_params": 199234,
+      "size_MB_float32": 0.76,
+      "input_dim": 49,
+      "flops_per_sample": 5817452,
+      "peak_memory_MB": 1.2830896377563477,
+      "median_ms": 64.97400000080233,
+      "mean_ms": 68.22984590006672,
+      "p95_ms": 86.95996999449561,
+      "source_file": "model_edge_iiot_binary.keras"
+    },
+    {
+      "name": "Proposed, K = 20 features",
+      "n_params": 199234,
+      "size_MB_float32": 0.76,
+      "input_dim": 20,
+      "flops_per_sample": 2487252,
+      "source_file": "model_edge_iiot_binary_k20.keras"
+    },
+    {
+      "name": "Proposed, K = 10 features",
+      "n_params": 199234,
+      "size_MB_float32": 0.76,
+      "input_dim": 10,
+      "flops_per_sample": 1318072,
+      "source_file": "model_edge_iiot_binary_k10.keras"
+    },
+    {
+      "name": "Proposed, noise-aware sigma = 0.1",
+      "n_params": 199234,
+      "size_MB_float32": 0.76,
+      "input_dim": 49,
+      "flops_per_sample": 5817452,
+      "peak_memory_MB": 1.0282554626464844,
+      "median_ms": 63.80714999977499,
+      "mean_ms": 66.7821437999446,
+      "p95_ms": 85.63745499632205,
+      "source_file": "model_edge_iiot_binary_noise.keras"
+    },
+    {
+      "name": "CNN + BiLSTM without attention",
+      "n_params": 132930,
+      "size_MB_float32": 0.5071,
+      "input_dim": 49,
+      "flops_per_sample": 2614796,
+      "peak_memory_MB": 1.0271186828613281,
+      "median_ms": 59.4208999973489,
+      "mean_ms": 61.6478461001534,
+      "p95_ms": 75.10685500310501,
+      "source_file": "rebuilt from baselines.py, untrained"
+    },
+    {
+      "name": "CNN only",
+      "n_params": 34114,
+      "size_MB_float32": 0.1301,
+      "input_dim": 49,
+      "flops_per_sample": 2482572,
+      "peak_memory_MB": 0.6308908462524414,
+      "median_ms": 5.095299999084091,
+      "mean_ms": 5.207305800053291,
+      "p95_ms": 6.094069996834149,
+      "source_file": "rebuilt from baselines.py, untrained"
+    },
+    {
+      "name": "BiLSTM only",
+      "n_params": 42178,
+      "size_MB_float32": 0.1609,
+      "input_dim": 49,
+      "flops_per_sample": 25164,
+      "peak_memory_MB": 1.0353355407714844,
+      "median_ms": 106.47210000024643,
+      "mean_ms": 109.5359022000921,
+      "p95_ms": 127.15009499661392,
+      "source_file": "rebuilt from baselines.py, untrained"
+    }
+  ]
+}

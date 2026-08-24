@@ -1,0 +1,18 @@
+尊重相关结构的扰动模型 (Edge-IIoTset, binary)
+
+Section 3.7 需要的相关性统计：
+  连续特征之间的平均绝对相关系数 : 0.0362        <-- 正文填这个
+  绝对相关系数超过 0.5 的特征对比例 : 2.0%   <-- 正文填这个
+
+Table 14 用的数字（攻击者自由度 / 各模型准确率）：
+
+  预算 eps = 0.02
+    Perturbation model         DoF                  Standard   Noise-aware (sigma=0.1)
+    independent                 49                    0.0732                    0.8752
+    subspace                     9                    0.6466                    0.8754
+    grouped                     36                    0.1180                    0.8752
+
+读法：若 standard 一行在 subspace 与 grouped 下仍然远低于 clean，
+就说明崩塌不是独立扰动这一不现实假设的产物，可以照 Section 4.6.8 的措辞写；
+若 grouped 下 standard 明显回升，则在正文如实写明分组约束显著削弱了攻击者，
+并把独立扰动结果明确定位成攻击者能力的上界。

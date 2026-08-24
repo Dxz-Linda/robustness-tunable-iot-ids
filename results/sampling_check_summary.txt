@@ -1,0 +1,37 @@
+Edge-IIoTset 分层抽样验证
+
+抽样工具  : sklearn.model_selection.train_test_split，train_size=200000，stratify=标签，random_state=42
+全量行数  : 2219201
+
+--- 分层依据 Attack_label（MODE='binary'） ---
+  最大绝对份额偏差 : 0.0001 个百分点，出现在类别 1   <-- 正文填这个
+  卡方拟合优度     : chi2=0.000, df=1, p=0.9993   <-- 正文填这个
+  最稀有类 1                  全量 603558 条 -> 样本 54394 条   <-- 正文填这个
+  最稀有类 0                  全量 1615643 条 -> 样本 145606 条   <-- 正文填这个
+
+--- 分层依据 Attack_type（MODE='multiclass'） ---
+  最大绝对份额偏差 : 0.0003 个百分点，出现在类别 Port_Scanning   <-- 正文填这个
+  卡方拟合优度     : chi2=0.003, df=14, p=1.0000   <-- 正文填这个
+  最稀有类 Fingerprinting     全量 1001 条 -> 样本 90 条   <-- 正文填这个
+  最稀有类 MITM               全量 1214 条 -> 样本 109 条   <-- 正文填这个
+
+交叉检查：按 binary 标签分层时 multiclass 的最大份额偏差 = 0.0759 个百分点。
+若这个值很小，可在正文写明两种模式下的抽样都保持了细粒度类别比例；
+若较大，则需在 Section 3.1 说明二分类与多分类实验各自按对应标签分层抽样。
+
+逐类明细（multiclass 分层）：
+  Normal                 full 72.803%  sample 72.803%  dev 0.0001 pp
+  DDoS_UDP               full  5.478%  sample  5.478%  dev 0.0000 pp
+  DDoS_ICMP              full  5.247%  sample  5.247%  dev 0.0003 pp
+  SQL_injection          full  2.307%  sample  2.307%  dev 0.0002 pp
+  Password               full  2.260%  sample  2.260%  dev 0.0000 pp
+  Vulnerability_scanner  full  2.258%  sample  2.258%  dev 0.0000 pp
+  DDoS_TCP               full  2.256%  sample  2.256%  dev 0.0001 pp
+  DDoS_HTTP              full  2.249%  sample  2.249%  dev 0.0001 pp
+  Uploading              full  1.696%  sample  1.696%  dev 0.0002 pp
+  Backdoor               full  1.120%  sample  1.121%  dev 0.0002 pp
+  Port_Scanning          full  1.017%  sample  1.016%  dev 0.0003 pp
+  XSS                    full  0.717%  sample  0.717%  dev 0.0002 pp
+  Ransomware             full  0.492%  sample  0.492%  dev 0.0002 pp
+  MITM                   full  0.055%  sample  0.054%  dev 0.0002 pp
+  Fingerprinting         full  0.045%  sample  0.045%  dev 0.0001 pp

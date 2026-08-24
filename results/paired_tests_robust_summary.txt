@@ -1,0 +1,103 @@
+B1 attention effect under standard training, metric noise_0.1: Full - NoAttn
+    mean paired difference = -0.1791  (-17.91 points)
+    t(4) = -2.007,  p = 0.1152,  Cohen dz = -0.898,  Wilcoxon p = 0.3125
+    95% CI = [-0.4269, +0.0687]  (-42.69 to +6.87 points)  contains zero
+
+B1 attention effect under standard training, metric pgd_0.02: Full - NoAttn
+    mean paired difference = -0.2732  (-27.32 points)
+    t(4) = -1.987,  p = 0.1178,  Cohen dz = -0.889,  Wilcoxon p = 0.1875
+    95% CI = [-0.6550, +0.1085]  (-65.50 to +10.85 points)  contains zero
+
+B1 attention effect under standard training, metric clean_acc: Full - NoAttn
+    mean paired difference = -0.0013  (-0.13 points)
+    t(4) = -0.891,  p = 0.4231,  Cohen dz = -0.399,  Wilcoxon p = 1.0000
+    95% CI = [-0.0053, +0.0027]  (-0.53 to +0.27 points)  contains zero
+
+B2 attention effect under noise-aware training, metric noise_0.1: Full - NoAttn
+    mean paired difference = -0.0001  (-0.01 points)
+    t(4) = -2.138,  p = 0.0993,  Cohen dz = -0.956,  Wilcoxon p = 0.2500
+    95% CI = [-0.0001, +0.0000]  (-0.01 to +0.00 points)  contains zero
+
+B2 attention effect under noise-aware training, metric pgd_0.02: Full - NoAttn
+    mean paired difference = +0.0003  (+0.03 points)
+    t(4) = 0.794,  p = 0.4716,  Cohen dz = +0.355,  Wilcoxon p = 0.7500
+    95% CI = [-0.0008, +0.0014]  (-0.08 to +0.14 points)  contains zero
+
+B2 attention effect under noise-aware training, metric clean_acc: Full - NoAttn
+    mean paired difference = +0.0003  (+0.03 points)
+    t(4) = 0.946,  p = 0.3977,  Cohen dz = +0.423,  Wilcoxon p = 0.6250
+    95% CI = [-0.0006, +0.0013]  (-0.06 to +0.13 points)  contains zero
+
+B3 noise-aware minus standard, BiLSTM only, metric noise_0.1
+    mean paired difference = +0.3265  (+32.65 points)
+    t(4) = 4.363,  p = 0.0120,  Cohen dz = +1.951,  Wilcoxon p = 0.0625
+    95% CI = [+0.1187, +0.5342]  (+11.87 to +53.42 points)  excludes zero
+
+B3 noise-aware minus standard, BiLSTM only, metric pgd_0.02
+    mean paired difference = +0.5680  (+56.80 points)
+    t(4) = 6.943,  p = 0.0023,  Cohen dz = +3.105,  Wilcoxon p = 0.0625
+    95% CI = [+0.3409, +0.7952]  (+34.09 to +79.52 points)  excludes zero
+
+B3 noise-aware minus standard, BiLSTM only, metric clean_acc
+    mean paired difference = -0.0342  (-3.42 points)
+    t(4) = -21.773,  p = 0.0000,  Cohen dz = -9.737,  Wilcoxon p = 0.0625
+    95% CI = [-0.0385, -0.0298]  (-3.85 to -2.98 points)  excludes zero
+
+B3 noise-aware minus standard, CNN only, metric noise_0.1
+    mean paired difference = +0.1575  (+15.75 points)
+    t(4) = 9.626,  p = 0.0007,  Cohen dz = +4.305,  Wilcoxon p = 0.0625
+    95% CI = [+0.1121, +0.2030]  (+11.21 to +20.30 points)  excludes zero
+
+B3 noise-aware minus standard, CNN only, metric pgd_0.02
+    mean paired difference = +0.5486  (+54.86 points)
+    t(4) = 6.024,  p = 0.0038,  Cohen dz = +2.694,  Wilcoxon p = 0.0625
+    95% CI = [+0.2958, +0.8015]  (+29.58 to +80.15 points)  excludes zero
+
+B3 noise-aware minus standard, CNN only, metric clean_acc
+    mean paired difference = -0.0401  (-4.01 points)
+    t(4) = -6.521,  p = 0.0029,  Cohen dz = -2.916,  Wilcoxon p = 0.0625
+    95% CI = [-0.0571, -0.0230]  (-5.71 to -2.30 points)  excludes zero
+
+B3 noise-aware minus standard, CNN+BiLSTM (no attn.), metric noise_0.1
+    mean paired difference = +0.1588  (+15.88 points)
+    t(4) = 26.417,  p = 0.0000,  Cohen dz = +11.814,  Wilcoxon p = 0.0625
+    95% CI = [+0.1421, +0.1755]  (+14.21 to +17.55 points)  excludes zero
+
+B3 noise-aware minus standard, CNN+BiLSTM (no attn.), metric pgd_0.02
+    mean paired difference = +0.2128  (+21.28 points)
+    t(4) = 7.139,  p = 0.0020,  Cohen dz = +3.192,  Wilcoxon p = 0.0625
+    95% CI = [+0.1300, +0.2956]  (+13.00 to +29.56 points)  excludes zero
+
+B3 noise-aware minus standard, CNN+BiLSTM (no attn.), metric clean_acc
+    mean paired difference = -0.0446  (-4.46 points)
+    t(4) = -26.352,  p = 0.0000,  Cohen dz = -11.785,  Wilcoxon p = 0.0625
+    95% CI = [-0.0493, -0.0399]  (-4.93 to -3.99 points)  excludes zero
+
+B3 noise-aware minus standard, Full (+attention), metric noise_0.1
+    mean paired difference = +0.3379  (+33.79 points)
+    t(4) = 3.851,  p = 0.0183,  Cohen dz = +1.722,  Wilcoxon p = 0.0625
+    95% CI = [+0.0943, +0.5815]  (+9.43 to +58.15 points)  excludes zero
+
+B3 noise-aware minus standard, Full (+attention), metric pgd_0.02
+    mean paired difference = +0.4864  (+48.64 points)
+    t(4) = 3.338,  p = 0.0289,  Cohen dz = +1.493,  Wilcoxon p = 0.0625
+    95% CI = [+0.0819, +0.8909]  (+8.19 to +89.09 points)  excludes zero
+
+B3 noise-aware minus standard, Full (+attention), metric clean_acc
+    mean paired difference = -0.0430  (-4.30 points)
+    t(4) = -15.315,  p = 0.0001,  Cohen dz = -6.849,  Wilcoxon p = 0.0625
+    95% CI = [-0.0508, -0.0352]  (-5.08 to -3.52 points)  excludes zero
+
+B4 across-seed sample SD, metric noise_0.1
+    BiLSTM only              SD standard = 0.1660   SD noise-aware = 0.0039
+    CNN only                 SD standard = 0.0335   SD noise-aware = 0.0048
+    CNN+BiLSTM (no attn.)    SD standard = 0.0146   SD noise-aware = 0.0036
+    Full (+attention)        SD standard = 0.1936   SD noise-aware = 0.0037
+    mean SD standard = 0.1019, mean SD noise-aware = 0.0040, ratio = 25.5
+
+B4 across-seed sample SD, metric pgd_0.02
+    BiLSTM only              SD standard = 0.1850   SD noise-aware = 0.0041
+    CNN only                 SD standard = 0.2055   SD noise-aware = 0.0037
+    CNN+BiLSTM (no attn.)    SD standard = 0.0664   SD noise-aware = 0.0040
+    Full (+attention)        SD standard = 0.3218   SD noise-aware = 0.0043
+    mean SD standard = 0.1947, mean SD noise-aware = 0.0040, ratio = 48.4

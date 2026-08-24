@@ -1,0 +1,44 @@
+随机森林机制分析 (Edge-IIoTset, binary)
+
+RF clean accuracy              : 0.9279
+稀疏近二值特征数 / 连续 / 全部  : 45 / 49 / 49
+稀疏位占 impurity 重要性        : 51.3%   <-- 正文填这个
+稀疏位占 permutation 重要性     : 40.2%   <-- 正文填这个
+Spearman rho(深度显著性, perm)  : -0.051574790770117736              <-- 正文填这个
+稀疏位分裂中位阈值              : 0.0179           <-- 正文填这个
+低于攻击预算 0.02 的分裂比例  : 52.5%   <-- 正文填这个
+
+逐特征明细（按低于预算的比例降序）：
+  dns.retransmission           splits=37     median=0.0179  below=100.0%
+  udp.port                     splits=102    median=0.0006  below=92.2%
+  icmp.seq_le                  splits=68     median=0.0002  below=89.7%
+  udp.stream                   splits=172    median=0.0002  below=86.6%
+  dns.qry.name                 splits=61     median=0.0000  below=85.2%
+  tcp.len                      splits=1204   median=0.0036  below=82.4%
+  http.content_length          splits=134    median=0.0003  below=82.1%
+  icmp.checksum                splits=99     median=0.0005  below=78.8%
+  dns.qry.qu                   splits=56     median=0.0102  below=71.4%
+  udp.time_delta               splits=97     median=0.0300  below=34.0%
+  arp.opcode                   splits=143    median=0.7500  below=0.0%
+  arp.hw.size                  splits=57     median=0.5000  below=0.0%
+  icmp.transmit_timestamp      splits=23     median=0.4968  below=0.0%
+  http.response                splits=155    median=0.5000  below=0.0%
+  tcp.connection.fin           splits=144    median=0.5000  below=0.0%
+  tcp.connection.rst           splits=98     median=0.5000  below=0.0%
+  tcp.connection.syn           splits=82     median=0.5000  below=0.0%
+  tcp.connection.synack        splits=66     median=0.5000  below=0.0%
+  dns.qry.name.len             splits=21     median=0.5000  below=0.0%
+  dns.retransmit_request       splits=7      median=0.5000  below=0.0%
+  dns.retransmit_request_in    splits=8      median=0.5000  below=0.0%
+  mqtt.conack.flags            splits=6      median=0.4672  below=0.0%
+  mqtt.conflag.cleansess       splits=2      median=0.5000  below=0.0%
+  mqtt.conflags                splits=8      median=0.5000  below=0.0%
+  mqtt.hdrflags                splits=52     median=0.0357  below=0.0%
+  mqtt.len                     splits=26     median=0.0256  below=0.0%
+  mqtt.msgtype                 splits=53     median=0.0714  below=0.0%
+  mqtt.proto_len               splits=13     median=0.5000  below=0.0%
+  mqtt.topic_len               splits=10     median=0.5000  below=0.0%
+  mqtt.ver                     splits=7      median=0.5000  below=0.0%
+  mbtcp.len                    splits=45     median=0.1111  below=0.0%
+  mbtcp.trans_id               splits=40     median=0.1192  below=0.0%
+  mbtcp.unit_id                splits=40     median=0.0833  below=0.0%

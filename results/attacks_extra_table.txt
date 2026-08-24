@@ -1,0 +1,60 @@
+Table 10 自适应攻击与特征操纵攻击 (Edge-IIoTset, binary), eps=0.02
+
+口径说明：
+  clean 分两行，因为 PGD 与 EOT 用 2000 条子集，翻转攻击用 5000 条子集，
+  同一列必须与同一个 clean 对照，否则会出现攻击后准确率高于干净准确率的假象。
+  overall_up     在全部样本上把指示位的零值抬到攻击流量的典型取值，报整体准确率；
+  on_normal_up   只在正常样本上抬升，报正常样本仍被判正常的比例，即假阳性攻击；
+  overall_down   在全部样本上把指示位压回零，报整体准确率；
+  on_attack_down 只在攻击样本上压零，报攻击样本仍被判为攻击的比例，即逃逸攻击。
+  排序 indicator 为数据驱动，正文主用；排序 saliency 为上一版口径，只作对照。
+
+Attack                                                                Standard   Noise-aware (sigma=0.1)
+--------------------------------------------------------------------------------------------------------
+Clean, flip subset (5000)                                               0.9244                    0.8754
+Clean, EOT subset (2000)                                                0.9255                    0.8865
+PGD, 7 steps                                                            0.0880                    0.8855
+EOT-PGD, 20 draws at sigma=0.1                                          0.2160                    0.8855
+Flip [indicator] overall, raise, 1 feature(s)                           0.4694                    0.8766
+Flip [indicator] overall, raise, 3 feature(s)                           0.4392                    0.7986
+Flip [indicator] overall, raise, 5 feature(s)                           0.3544                    0.7284
+Flip [indicator] overall, raise, 10 feature(s)                          0.3904                    0.3930
+Flip [indicator] on normal, raise, 1 feature(s)                         0.2728                    0.9454
+Flip [indicator] on normal, raise, 3 feature(s)                         0.2385                    0.8819
+Flip [indicator] on normal, raise, 5 feature(s)                         0.1151                    0.8884
+Flip [indicator] on normal, raise, 10 feature(s)                        0.1645                    0.1686
+Flip [indicator] overall, zero out, 1 feature(s)                        0.9242                    0.8754
+Flip [indicator] overall, zero out, 3 feature(s)                        0.8276                    0.8754
+Flip [indicator] overall, zero out, 5 feature(s)                        0.8276                    0.8516
+Flip [indicator] overall, zero out, 10 feature(s)                       0.8234                    0.8376
+Flip [indicator] on attack, zero out, 1 feature(s)                      0.7226                    0.5540
+Flip [indicator] on attack, zero out, 3 feature(s)                      0.3654                    0.5540
+Flip [indicator] on attack, zero out, 5 feature(s)                      0.3654                    0.6132
+Flip [indicator] on attack, zero out, 10 feature(s)                     0.3491                    0.5651
+Flip [saliency] overall, raise, 1 feature(s)                            0.8158                    0.7834
+Flip [saliency] overall, raise, 3 feature(s)                            0.8112                    0.7532
+Flip [saliency] overall, raise, 5 feature(s)                            0.7970                    0.8274
+Flip [saliency] overall, raise, 10 feature(s)                           0.7770                    0.7296
+Flip [saliency] on normal, raise, 1 feature(s)                          1.0000                    0.8832
+Flip [saliency] on normal, raise, 3 feature(s)                          1.0000                    0.8819
+Flip [saliency] on normal, raise, 5 feature(s)                          1.0000                    0.9931
+Flip [saliency] on normal, raise, 10 feature(s)                         1.0000                    1.0000
+Flip [saliency] overall, zero out, 1 feature(s)                         0.9244                    0.8754
+Flip [saliency] overall, zero out, 3 feature(s)                         0.9244                    0.8754
+Flip [saliency] overall, zero out, 5 feature(s)                         0.9244                    0.8754
+Flip [saliency] overall, zero out, 10 feature(s)                        0.9244                    0.7644
+Flip [saliency] on attack, zero out, 1 feature(s)                       0.7234                    0.5540
+Flip [saliency] on attack, zero out, 3 feature(s)                       0.7234                    0.5540
+Flip [saliency] on attack, zero out, 5 feature(s)                       0.7234                    0.5540
+Flip [saliency] on attack, zero out, 10 feature(s)                      0.7234                    0.4438
+
+读法：
+  EOT-PGD 与七步 PGD 在加噪模型上应当接近，表示攻击者知道防御细节也无优势。
+  排序 indicator 下若标准模型的 on_normal_up 明显下降而加噪模型基本不动，
+  就直接验证了 Section 4.6.1 的机制：脆弱性由零值稀疏指示位被激活所承载。
+  排序 indicator 下若 on_attack_down 大幅下降，说明攻击者只要抹掉少数几个字段
+  就能逃逸，这是比假阳性更值得写进正文的现实威胁。
+  若排序 indicator 下两个模型都几乎不动，而排序 saliency 下同样不动，
+  则结论是深度模型的脆弱性并非由单个指示位承载，而是由多个特征上的
+  微小改动累加承载。此时不要硬套原机制，改用 margin_radius 的裕度与梯度口径，
+  并把本实验作为一个阴性对照如实报出，它同样是对机制的有价值约束。

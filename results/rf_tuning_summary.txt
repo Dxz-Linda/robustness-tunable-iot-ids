@@ -1,0 +1,36 @@
+随机森林超参数搜索 (Edge-IIoTset, binary)
+
+搜索方法      : RandomizedSearchCV, 60 个候选
+评分          : matthews_corrcoef，在固定的验证集上（PredefinedSplit），测试集不参与
+随机种子      : 42
+耗时          : 1.9 分钟
+
+搜索空间：
+  n_estimators        [100, 200, 300, 500]
+  max_depth           [None, 10, 20, 30, 50]
+  min_samples_split   [2, 5, 10, 20]
+  min_samples_leaf    [1, 2, 4, 8]
+  max_features        ['sqrt', 'log2', 0.3, 0.5]
+
+最优配置      : {'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.3, 'max_depth': 30}
+验证集 matthews_corrcoef : 0.8135
+
+测试集对照（这一段决定要不要重跑论文数字）：
+  最优配置    acc=0.9279  macroF1=0.9001  mcc=0.8176
+  默认配置    acc=0.9279  macroF1=0.9001  mcc=0.8176
+  差值        d_acc=+0.0000  d_mcc=+0.0000
+
+  >>> 差异在噪声范围内。论文里 RF 的所有数字保持不变，
+      在 Section 3.8 写明搜索确认了当前配置已接近最优即可。
+
+验证集分数前 10 的候选：
+  0.8135  {'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.3, 'max_depth': 30}
+  0.8135  {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 30}
+  0.8135  {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': 20}
+  0.8135  {'n_estimators': 500, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 0.3, 'max_depth': 50}
+  0.8135  {'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': None}
+  0.8135  {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 30}
+  0.8135  {'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': None}
+  0.8135  {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 50}
+  0.8135  {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.3, 'max_depth': None}
+  0.8135  {'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 30}
